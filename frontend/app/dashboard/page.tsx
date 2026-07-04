@@ -163,7 +163,7 @@ export default function Dashboard() {
 
           <div className="flex items-center gap-6">
             {/* Cluster Selector */}
-            {clusters.length > 0 && (
+            {clusters.length > 0 ? (
               <div className="flex items-center gap-3 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700/50">
                 <span className="text-slate-400 text-sm font-medium">Cluster:</span>
                 <select
@@ -177,6 +177,11 @@ export default function Dashboard() {
                     </option>
                   ))}
                 </select>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2 bg-slate-800/30 px-4 py-2 rounded-lg border border-slate-700/30">
+                <span className="w-2 h-2 rounded-full bg-slate-500"></span>
+                <span className="text-slate-500 text-sm font-medium">No cluster connected — demo mode</span>
               </div>
             )}
 
